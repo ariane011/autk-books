@@ -1,6 +1,6 @@
-## :books: Bloom Books
+## :books: Autk Books
 
-#### AUTK Books é um projeto desenvolvido para um case de Front-End
+#### Autk Books é um projeto desenvolvido para um case de Front-End
 
 Aqui, é possível visualizar e adicionar livros ao carrinho de compras com desconto. Os livros são disponibilizados através da api do The New York Times.
 
