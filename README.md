@@ -2,7 +2,14 @@
 
 #### Autk Books é um projeto desenvolvido para um case de Front-End
 
-Aqui, é possível visualizar e adicionar livros ao carrinho de compras com desconto. Os livros são disponibilizados através da api do The New York Times.
+Aqui, é possível visualizar e adicionar livros ao carrinho de compras. A loja tem uma promoção especial para quem compra por esses novos meios, que consiste em dar descontos ao total da compra, dependendo da quantidade de livros distintos que estão sendo comprados.
+
+A regra de descontos é a seguinte:
+
+2 livros distintos: 5%
+3 livros distintos: 10%
+4 livros distintos: 20%
+5 ou mais livros distintos: 25%
 
 ---
 
