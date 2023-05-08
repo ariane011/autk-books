@@ -1,0 +1,76 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Pequeno Príncipe",
+      "description": "Um piloto cai com seu avião no deserto e ali encontra uma criança loura e frágil. Ela diz ter vindo de um pequeno planeta distante. E ali, na convivência com o piloto perdido, os dois repensam os seus valores e encontram o sentido da vida. Com essa história mágica, sensível, comovente, às vezes triste, e só aparentemente infantil, o escritor francês Antoine de Saint-Exupéry criou há 70 anos um dos maiores clássicos da literatura universal. Não há adulto que não se comova ao se lembrar de quando o leu quando criança. Trata-se da maior obra existencialista do século XX, segundo Martin Heidegger. Livro mais traduzido da história, depois do Alcorão e da Bíblia, ele agora chega ao Brasil em nova edição, completa, enriquecida com um caderno ilustrado sobre a obra e a curta e trágica vida do autor.",
+      "price": 17.85,
+      "publisher": "Via Leitura; 1ª edição (1 fevereiro 2015)",
+      "image": "https://m.media-amazon.com/images/I/51ZGrf91M9L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "rank": "Nº 877 em Livros"
+    },
+    {
+      "id": 2,
+      "title": "Um Gato de Rua Chamado Bob",
+      "description": "O Livro que deu origem ao filme que emocionou milhares de pessoas em todo o mundo Sucesso no exterior, Um gato de rua chamado Bob ficou 52 semanas consecutivas na lista dos mais vendidos na Inglaterra e já teve seus direitos de publicação vendidos para mais de 26 países e na semana de lançamento no Brasil, já subiu para a lista dos livros mais vendidos. Em 2012, a história de James Bowen e do gato Bob foi destaque na mídia nacional como exemplo de superação e amizade entre os dois.Conheça um pouco da história de Um Gato de rua chamado Bob: É uma tarde de outono em Covent Garden, Londres. Trabalhadores correm para o almoço, turistas brotam de todos os lados e clientes entram e saem das lojas. No meio de tudo isso está um gato. Usando um vistoso lenço Union Jack em volta do pescoço e cercado por uma multidão de 30 espectadores de boca aberta, Bob, o gatinho cor de laranja, sorri ― é, sorri ― timidamente. Próximo a ele, está seu dono James Bowen, com seu violão surrado, cantando músicas do Oasis. Então, ele para de tocar e se abaixa para Bob: Vamos, Bob, cumprimente!, diz. Bob mexe os bigodes, levanta uma pata e a estende para James. A multidão assobia. Não é todo dia que se vê um gato sentado, calmamente, no centro de Londres, aparentemente sem se abalar com o barulho das sirenes, os carros passando e todo aquele movimento ― mas Bob não é um gato comum...",
+      "price": 51.9,
+      "publisher": "Novo Conceito; Capa do filme edição (7 novembro 2016)",
+      "image": "https://m.media-amazon.com/images/I/419ipeKYNeL._SX331_BO1,204,203,200_.jpg",
+      "rank": "Nº 66,707"
+    },
+    {
+      "id": 3,
+      "title": "Star Wars: Perseguição ao Jedi Capa comum",
+      "description": "Dos autores best-seller do The New York Times, Michael Reaves e Maya Bohnhoff, mais um clássico de Star Wars!. A Ordem 66 quase exterminou todos os Jedi. Os poucos que sobraram decidiram se exilar ou se esconder. Mas não Jax Pavan, que vem enfrentando o Império como um guerrilheiro solitário e um valioso parceiro da Whiplash, um secreto grupo de resistência com sede em Coruscant. Agora ele precisa transportar, de Coruscant para a segurança de um mundo distante, um importante líder da Whiplash marcado para morrer. É uma missão arriscada sob qualquer circunstância, mas Jax e sua tripulação estão preparados para testar suas habilidades de combate e o poder de fogo de sua nave contra todas as ameaças Imperiais – exceto aquela que Jax mais teme: Darth Vader. Jax sabe que o Lorde Sombrio não descansará até que o último Jedi seja aniquilado.",
+      "price": 54.9,
+      "publisher": "Universo dos Livros; 1ª edição (31 janeiro 2020)",
+      "image": "https://m.media-amazon.com/images/I/51fsagITVUL._SX351_BO1,204,203,200_.jpg",
+      "rank": "Nº 46,245"
+    },
+    {
+      "id": 4,
+      "title": "A Guerra dos Tronos : As Crônicas de Gelo e Fogo, volume 1 Capa comum",
+      "description": "A guerra dos tronos é o primeiro livro da série best-seller internacional As Crônicas de Gelo e Fogo, que deu origem à adaptação de sucesso da HBO, Game of Thrones. O verão pode durar décadas. O inverno, toda uma vida. E a guerra dos tronos começou. Como Guardião do Norte, lorde Eddard Stark não fica feliz quando o rei Robert o proclama a nova Mão do Rei. Sua honra o obriga a aceitar o cargo e deixar seu posto em Winterfell para rumar para a corte, onde os homens fazem o que lhes convém, não o que devem... e onde um inimigo morto é algo a ser admirado. Longe de casa e com a família dividida, Eddard se vê cada vez mais enredado nas intrigas mortais de Porto Real, sem saber que perigos ainda maiores espreitam a distância. Nas florestas ao norte de Winterfell, forças sobrenaturais se espalham por trás da Muralha que protege a região. E, nas Cidades Livres, o jovem Rei Dragão exilado na Rebelião de Robert planeja sua vingança e deseja recuperar sua herança de família: o Trono de Ferro de Westeros.",
+      "price": 51.9,
+      "publisher": "Suma; 1ª edição (25 março 2019)",
+      "image": "https://m.media-amazon.com/images/I/41UKpOWrZVL._SX346_BO1,204,203,200_.jpg",
+      "rank": "Nº 898"
+    },
+    {
+      "id": 5,
+      "title": "A fúria dos reis: As Crônicas de Gelo e Fogo, volume 2 Capa comum",
+      "description": "Um cometa da cor de fogo e sangue corta os céus. E, da antiga cidadela de Pedra do Dragão às costas áridas de Winterfell, reina o caos. Em A fúria dos reis, seis facções disputam o controle de uma terra dividida e o direito de ocupar o Trono de Ferro de Westeros – e estão dispostos a encarar tempestades, levantes e guerras para isso. Nesta história, irmão trama contra irmão e os mortos se levantam para caminhar pela noite. Aqui, uma princesa se disfarça de menino órfão, um cavaleiro se prepara para encarar uma pérfida feiticeira e bárbaros descem das Montanhas da Lua para saquear os campos. Em um contexto de incesto e fratricídio, alquimia e assassinato, a vitória será dos homens e mulheres que possuírem o mais frio aço... e o mais frio coração. Pois, quando se desperta a fúria dos reis, a terra inteira treme.",
+      "price": 48.99,
+      "publisher": "Suma; 1ª edição (20 setembro 2019)",
+      "image": "https://m.media-amazon.com/images/I/51OxMUhiXwL._SX346_BO1,204,203,200_.jpg",
+      "rank": "Nº 1,209"
+    },
+    {
+      "id": 6,
+      "title": "A tormenta de espadas: As Crônicas de Gelo e Fogo, volume 3 Capa comum",
+      "description": "Este é o terceiro volume da série As Crônicas de Gelo e Fogo, que inclui A guerra dos tronos e A fúria dos reis. Já considerada um clássico, a obra emocionante de George R. R. Martin é um dos maiores feitos da literatura fantástica de todos os tempos. O futuro de Westeros está em jogo, e ninguém descansará até que os Sete Reinos tenham explodido em uma verdadeira tormenta de espadas. Dos cinco pretendentes ao trono, um está morto e outro caiu em desgraça, e ainda assim a guerra continua em toda sua fúria, enquanto alianças são feitas e desfeitas. Joffrey, da Casa Lannister, ocupa o Trono de Ferro, como o instável governante dos Sete Reinos, ao passo que seu rival mais amargo, lorde Stannis, jaz derrotado e enfeitiçado pelas promessas da Mulher Vermelha. O jovem Robb, da Casa Stark, ainda comanda o Norte, contudo, e planeja sua batalha contra os Lannister, mesmo que sua irmã seja refém deles em Porto Real. Enquanto isso, Daenerys Targaryen atravessa um continente deixando um rastro de sangue a caminho de Westeros, levando consigo os três únicos dragões existentes em todo o mundo. Enquanto forças opostas avançam para uma gigantesca batalha final, um exército de selvagens chega dos confins da civilização. Em seu rastro vem uma horda de terríveis criaturas místicas – os Outros: um batalhão de mortos-vivos cujos corpos são imparáveis.",
+      "price": 69.99,
+      "publisher": "Suma; 1ª edição (20 setembro 2019)",
+      "image": "https://m.media-amazon.com/images/I/51lbSoFZYwL._SX346_BO1,204,203,200_.jpg",
+      "rank": "Nº 1,995"
+    },
+    {
+      "id": 7,
+      "title": "O Festim dos Corvos: As Crônicas de Gelo e Fogo, volume 4 Capa comum",
+      "description": "O festim dos corvos é o quarto livro da monumental saga de fantasia As Crônicas de Gelo e Fogo, sucesso internacional que deu origem a Game of Thrones. Neste livro, Martin coloca um reino dilacerado à beira da paz... só para ser lançado de novo rumo ao terror e à destruição. Há séculos os sete grandes reinos de Westeros se enfrentam em amargas disputas, batalhas e traições. Agora, com Joffrey Baratheon e Robb Stark fora da jogada e lordes insignificantes competindo pelas Ilhas de Ferro, a guerra que devorou o continente parece ter finalmente chegado ao fim. No entanto, como após todo grande conflito, não demora para que os sobreviventes, os bandidos, os renegados e os carniceiros avancem para disputar o espólio dos mortos. Por toda Westeros os lordes se agitam, formando alianças e fazendo planos, enquanto nomes conhecidos e desconhecidos se apresentam para tomar parte das danças políticas. Todos precisam lançar mão de suas habilidades e poderes para encarar os tempos de terror que se aproximam. Nobres e plebeus, soldados e feiticeiros, assassinos e saqueadores devem arriscar suas fortunas... e suas vidas, pois em um festim de corvos, muitos são os convidados ― e poucos os sobreviventes.",
+      "price": 51.2,
+      "publisher": "Suma; 1ª edição (11 novembro 2019)",
+      "image": "https://m.media-amazon.com/images/I/41j4e8si8cL._SX346_BO1,204,203,200_.jpg",
+      "rank": "Nº 2,833"
+    },
+    {
+      "id": 8,
+      "title": "A dança dos dragões: 5 Capa comum",
+      "description": "A dança dos dragões é o quinto livro da saga As Crônicas de Gelo e Fogo, dando continuidade à trama de O festim dos corvos e trazendo personagens novos e conhecidos em disputas acirradas por um reino à beira da ruína. É outono em Westeros, e a Guerra dos Cinco Reis parece finalmente entrar na reta final. Stannis Baratheon se instala no Norte e jura conquistar o apoio dos senhores da região para continuar sua luta pelo trono, embora seja atrapalhado pela invasão de homens de ferro em grande parte da costa. Na Muralha, Jon Snow é eleito o 998º Senhor Comandante da Patrulha da Noite, mas inimigos o cercam de todos os lados, tanto na Patrulha quanto para além da Muralha. Enquanto isso, Tyrion Lannister atravessa o Mar Estreito rumo a Pentos, sem objetivos definidos, sem aliados e cada vez mais sem opções. Na Baía dos Escravos, Daenerys Targaryen conquista a cidade de Meereen e decide ficar e governá-la, praticando as habilidades de liderança que serão tão necessárias quando partir para Westeros. No entanto, sua presença já foi notada por muitos senhores nos Sete Reinos, e das Ilhas de Ferro e de Dorne, de Vilavelha e das Cidades Livres, emissários estão a caminho, querendo se unir à sua causa e, se possível, usá-la para os próprios fins. Em todos os cantos conflitos ganham vida e traições vêm daqueles mais próximos. Guerreiros, selvagens, nobres e escravos – todos têm pela frente um longo inverno, enquanto destino, ambição e política ditam o ritmo da dança mais perigosa de todas.",
+      "price": 52.99,
+      "publisher": "Suma; 1ª edição (25 março 2020)",
+      "image": "https://m.media-amazon.com/images/I/51SRGgaei2L._SX346_BO1,204,203,200_.jpg",
+      "rank": "Nº 6,747"
+    }
+  ]
+}
