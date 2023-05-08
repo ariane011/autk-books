@@ -2,7 +2,7 @@
 
 #### Autk Books é um projeto desenvolvido para um case de Front-End
 
-Aqui, é possível visualizar e adicionar livros ao carrinho de compras. A loja tem uma promoção especial para quem compra por esses novos meios, que consiste em dar descontos ao total da compra, dependendo da quantidade de livros distintos que estão sendo comprados.
+Aqui disponibilizamos livros para que você possa adicionar ao carrinho de compras e tenha desconto, caso esteja dentro da regra de desconto. A loja tem uma promoção especial para quem compra por esses novos meios, que consiste em dar descontos ao total da compra, dependendo da quantidade de livros distintos que estão sendo comprados.
 
 A regra de descontos é a seguinte:
 
