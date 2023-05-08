@@ -20,6 +20,8 @@ A regra de descontos é a seguinte:
 - [x] Webpack
 - [x] Antd
 - [x] Axios
+- [x] YARN
+- [x] JSON Server
 - [x] Git
 - [x] GitLab
 
@@ -46,13 +48,13 @@ cd autk-books
 #### Passo 3: Instale todas as dependências do projeto
 
 ```sh
-npm install
+yarn install
 ```
 
 #### Passo 4: Rode o projeto na sua máquina
 
 ```sh
-npm start
+yarn start
 ```
 
 #### Passo 5: Abra o navegador e visualize o projeto
