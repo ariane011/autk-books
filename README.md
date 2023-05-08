@@ -6,10 +6,10 @@ Aqui, é possível visualizar e adicionar livros ao carrinho de compras. A loja 
 
 A regra de descontos é a seguinte:
 
-2 livros distintos: 5%
-3 livros distintos: 10%
-4 livros distintos: 20%
-5 ou mais livros distintos: 25%
+- 2 livros distintos: 5%
+- 3 livros distintos: 10%
+- 4 livros distintos: 20%
+- 5 ou mais livros distintos: 25%
 
 ---
 
