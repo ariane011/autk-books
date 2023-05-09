@@ -4,7 +4,7 @@ export const StyledTitle = styled.div`
   width: 100%;
   background-color: #f2f3f8;
   height: 50px;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   font-family: "Roboto";
   font-style: normal;
@@ -14,16 +14,6 @@ export const StyledTitle = styled.div`
     padding-left: 50px;
     font-weight: 700;
     width: 100%;
-  }
-  .content-filter {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: auto 50px auto auto;
-    width: inherit;
-    p {
-      padding-right: 43px;
-    }
   }
 `;
 
@@ -50,6 +40,16 @@ export const Container = styled.div`
   }
   p {
     font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content;
+    height: auto;
+  }
+  .p-description {
+    /* display: flex; */
+    width: 200px;
+    height: auto;
   }
   .list {
     margin-top: 10px;
