@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import BooksList from "../../service/BooksList";
 import { Container, StyledTitle } from "./index.styled";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { addBook } from "../../indexedDB";
+import { add, addBook } from "../../indexedDB";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
@@ -69,7 +69,14 @@ export const BookList = () => {
                         shape="round"
                         size={200}
                         // className={"buy-" + book.id}
-                        // onClick={() => addBook(dataObj)}
+                        // onClick={() =>
+                        //   add({
+                        //     id: 1,
+                        //     name: "Ari",
+                        //     age: 24,
+                        //     email: "jam@example.com",
+                        //   })
+                        // }
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {
