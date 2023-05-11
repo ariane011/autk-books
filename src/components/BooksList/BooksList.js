@@ -4,20 +4,27 @@ import { useLocation } from "react-router-dom";
 import BooksList from "../../service/BooksList";
 import { Container, StyledTitle } from "./index.styled";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { add, addBook } from "../../indexedDB";
+import { addBook } from "../../indexedDB";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
   const bookName = useLocation();
 
   const dataObj = {
-    id: book.id,
-    title: book.title,
-    description: book.title,
-    price: book.price,
-    publisher: book.publisher,
-    image: book.image,
-    rank: book.rank,
+    id: 1,
+    title: "Ariane",
+    description: "...",
+    price: 20.9,
+    publisher: "Editora",
+    image: "url",
+  };
+  addBook(dataObj);
+
+  const handleClick = () => {
+    // e.preventDefault();
+    addBook(dataObj);
+    console.log("The link was clicked.");
+    console.log(dataObj);
   };
 
   useEffect(() => {
@@ -65,18 +72,11 @@ export const BookList = () => {
                     </p>
                     <Link to={"/cart-shopping"}>
                       <Button
+                        onClick={handleClick}
                         type="primary"
                         shape="round"
                         size={200}
-                        // className={"buy-" + book.id}
-                        // onClick={() =>
-                        //   add({
-                        //     id: 1,
-                        //     name: "Ari",
-                        //     age: 24,
-                        //     email: "jam@example.com",
-                        //   })
-                        // }
+                        className={"buy-" + book.id}
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {

@@ -38,44 +38,8 @@
 //   };
 // }
 
-// const dbRequest = indexedDB.open("connectDB", 1);
-
-// dbRequest.onerror = function (event) {
-//   console.log("The database is opened failed");
-// };
-
-// let db;
-
-// dbRequest.onupgradeneeded = function (event) {
-//   let db = event.target.result;
-//   let objectStore;
-//   if (!db.objectStoreNames.contains("users")) {
-//     objectStore = db.createObjectStore("users", { keyPath: "id" });
-//     objectStore.createIndex("name", "name", { unique: false });
-//     objectStore.createIndex("email", "email", { unique: true });
-//   }
-// };
-
-// export function add(event) {
-//   const db = dbRequest.result;
-//   const request = db
-//     .transaction(["person", "readwrite"])
-//     .objectStore("person")
-//     .add({ id: 1, name: "Jam", age: 24, email: "jam@example.com" });
-
-//   request.onsuccess = function (event) {
-//     console.log("The data has been written successfully");
-//   };
-
-//   request.onerror = function (event) {
-//     console.log("The data has been written failed");
-//   };
-// }
-
-//Creating an indexDB - Used to store users information.
-
 //Create a profile database
-const database = indexedDB.open("ProfileDatabase", 5);
+const database = indexedDB.open("AutkBooks", 5);
 
 //Do something if error occurs to create it
 database.onerror = function (event) {
@@ -83,38 +47,35 @@ database.onerror = function (event) {
 };
 
 //Create a a constbile to store info that needs to be added to database.
-const book1 = { id: 1, name: "Programming" };
-//If the database is created run.
-database.onsuccess = function (event) {
-  const db = event.target.result;
-
-  const transaction = db.transaction(["books"], "readwrite");
-
-  transaction
-    .objectStore("books")
-    .add({ id: 1, name: "Jam", age: 24, email: "jam@example.com" });
+const dataObj = {
+  id: 1,
+  title: "Test",
+  description: "...",
+  price: 20.9,
+  publisher: "Editora",
+  image: "url",
 };
+//If the database is created run.
+export function addBook(book) {
+  database.onsuccess = function (event) {
+    console.log(book);
+    const db = event.target.result;
 
-// dbRequest.onupgradeneeded = function (event) {
-//   let db = event.target.result;
-//   let objectStore;
-//   if (!db.objectStoreNames.contains("users")) {
-//     objectStore = db.createObjectStore("users", { keyPath: "id" });
-//     objectStore.createIndex("name", "name", { unique: false });
-//     objectStore.createIndex("email", "email", { unique: true });
-//   }
-// };
+    const transaction = db.transaction(["books"], "readwrite");
 
-//On upgrade needed.
+    transaction.objectStore("books").add(book);
+  };
+}
 database.onupgradeneeded = function (event) {
   const db = event.target.result;
-
-  alert("Run onupgradeneeded");
   let objectStore;
   //
   if (!db.objectStoreNames.contains("books")) {
     objectStore = db.createObjectStore("books", { keyPath: "id" });
-    objectStore.createIndex("name", "name", { unique: false });
-    objectStore.createIndex("email", "email", { unique: true });
+    objectStore.createIndex("title", "title", { unique: false });
+    objectStore.createIndex("price", "price", { unique: true });
+    objectStore.createIndex("image", "image", { unique: true });
   }
 };
+
+// addBook(dataObj);
