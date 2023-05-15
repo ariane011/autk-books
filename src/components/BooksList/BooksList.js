@@ -1,31 +1,22 @@
 import { message, List, Button } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { Children, useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BooksList from "../../service/BooksList";
 import { Container, StyledTitle } from "./index.styled";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { addBook } from "../../indexedDB";
+import { CartContext } from "../../context/cart";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
+  const [bookCart, setBookCart] = useState([]);
   const bookName = useLocation();
 
-  const dataObj = {
-    id: 1,
-    title: "Ariane",
-    description: "...",
-    price: 20.9,
-    publisher: "Editora",
-    image: "url",
-  };
-  addBook(dataObj);
-
-  const handleClick = () => {
-    // e.preventDefault();
-    addBook(dataObj);
-    console.log("The link was clicked.");
-    console.log(dataObj);
-  };
+  const {
+    productsCart = [],
+    addProducToCart,
+    removeProductToCart,
+    clearCart,
+  } = useContext(CartContext);
 
   useEffect(() => {
     try {
@@ -43,7 +34,13 @@ export const BookList = () => {
   return (
     <>
       <Container>
-        <StyledTitle>{/* <h1>{str}</h1> */}</StyledTitle>
+        <StyledTitle>{JSON.stringify(productsCart)}</StyledTitle>
+        <h3>
+          {productsCart.find((item) => item.id === book.id)?.qtd
+            ? productsCart.find((item) => item.id === book.id)?.qtd
+            : 0}
+        </h3>
+
         <List
           className="list"
           pagination={{
@@ -72,11 +69,11 @@ export const BookList = () => {
                     </p>
                     <Link to={"/cart-shopping"}>
                       <Button
-                        onClick={handleClick}
                         type="primary"
                         shape="round"
                         size={200}
                         className={"buy-" + book.id}
+                        onClick={() => addProducToCart(book.id)}
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {
