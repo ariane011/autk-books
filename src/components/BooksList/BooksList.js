@@ -1,5 +1,5 @@
 import { message, List, Button } from "antd";
-import React, { Children, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BooksList from "../../service/BooksList";
 import { Container, StyledTitle } from "./index.styled";
@@ -8,15 +8,10 @@ import { CartContext } from "../../context/cart";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
-  const [bookCart, setBookCart] = useState([]);
+  // const [bookCart, setBookCart] = useState([]);
   const bookName = useLocation();
 
-  const {
-    productsCart = [],
-    addProducToCart,
-    removeProductToCart,
-    clearCart,
-  } = useContext(CartContext);
+  const { addProducToCart } = useContext(CartContext);
 
   useEffect(() => {
     try {
@@ -34,13 +29,7 @@ export const BookList = () => {
   return (
     <>
       <Container>
-        <StyledTitle>{JSON.stringify(productsCart)}</StyledTitle>
-        <h3>
-          {productsCart.find((item) => item.id === book.id)?.qtd
-            ? productsCart.find((item) => item.id === book.id)?.qtd
-            : 0}
-        </h3>
-
+        <StyledTitle>Livros</StyledTitle>
         <List
           className="list"
           pagination={{
@@ -73,7 +62,7 @@ export const BookList = () => {
                         shape="round"
                         size={200}
                         className={"buy-" + book.id}
-                        onClick={() => addProducToCart(book.id)}
+                        onClick={() => addProducToCart(book)}
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {

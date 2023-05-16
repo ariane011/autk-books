@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <Container>
       <a href={"/"} style={{ fontSize: 24, fontWeight: 500 }}>
-        AUTK Books
+        Autk Books
       </a>
       <Row
         style={{

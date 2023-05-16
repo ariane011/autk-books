@@ -5,12 +5,18 @@ export const CartContext = createContext();
 export default function CartProvider({ children }) {
   const [productsCart, setProductsCart] = useState([]);
 
-  function addProducToCart(id) {
+  function addProducToCart(book) {
     const copyProductsCart = [...productsCart];
 
-    const item = copyProductsCart.find((product) => product.id === id);
+    const item = copyProductsCart.find((product) => product.id === book.id);
     if (!item) {
-      copyProductsCart.push({ id: id, qtd: 1 });
+      copyProductsCart.push({
+        id: book.id,
+        qtd: 1,
+        title: book.title,
+        image: book.image,
+        price: book.price,
+      });
     } else {
       item.qtd = item.qtd + 1;
     }
