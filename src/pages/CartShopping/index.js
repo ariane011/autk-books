@@ -24,18 +24,30 @@ export const CartShopping = () => {
     }
   }, [bookName]);
 
+  const setCart = function (productsCart) {
+    localStorage.setItem("cart", JSON.stringify(productsCart));
+  };
+
+  const storageValue = JSON.parse(localStorage.getItem("cart"));
   return (
     <Container>
       {/* {productsCart.find((item) => item.id === book.id)?.qtd
         ? productsCart.find((item) => item.id === book.id)?.qtd
         : "Seu carrinho está vazio"} */}
-      {productsCart.map((index) => (
-        <>
-          <p key={index.id}>{(index.qtd = countQtd)}</p>
-          <p key={index.id}>{index.title}</p>
+      {storageValue.map((index) => (
+        <div key={index.id}>
+          <p>{(index.qtd = countQtd)}</p>
+          <p>{index.title}</p>
           <img src={index.image} alt="Capa do livro" />
-          <button onClick={() => setCountQtd(countQtd + 1)}>+</button>
-        </>
+          <button
+            onClick={() => {
+              setCountQtd(countQtd + 1);
+              setCart(productsCart);
+            }}
+          >
+            +
+          </button>
+        </div>
       ))}
     </Container>
   );

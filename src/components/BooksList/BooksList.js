@@ -8,6 +8,7 @@ import { CartContext } from "../../context/cart";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
+  const { productsCart = [] } = useContext(CartContext);
   // const [bookCart, setBookCart] = useState([]);
   const bookName = useLocation();
 
@@ -25,6 +26,10 @@ export const BookList = () => {
       );
     }
   }, [bookName]);
+
+  const setCart = function (productsCart) {
+    localStorage.setItem("cart", JSON.stringify(productsCart));
+  };
 
   return (
     <>
@@ -62,7 +67,10 @@ export const BookList = () => {
                         shape="round"
                         size={200}
                         className={"buy-" + book.id}
-                        onClick={() => addProducToCart(book)}
+                        onClick={() => {
+                          addProducToCart(book);
+                          setCart(productsCart);
+                        }}
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {
