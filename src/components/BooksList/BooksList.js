@@ -27,9 +27,30 @@ export const BookList = () => {
     }
   }, [bookName]);
 
+  console.log(book);
   const setCart = function (productsCart) {
     localStorage.setItem("cart", JSON.stringify(productsCart));
   };
+  function addItem(book) {
+    const bookData = {
+      id: book.id,
+      qtd: 1,
+      title: book.title,
+      image: book.image,
+      price: book.price,
+    };
+    if (localStorage.getItem("cart") === null) {
+      // Adicionando um array com um objeto no localstorage
+      localStorage.setItem("cart", JSON.stringify([bookData]));
+    } else {
+      // Copiando o array existente no localstorage e adicionando o novo objeto ao final.
+      localStorage.setItem(
+        "cart",
+        // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
+        JSON.stringify([...JSON.parse(localStorage.getItem("cart")), bookData])
+      );
+    }
+  }
 
   return (
     <>
@@ -67,10 +88,19 @@ export const BookList = () => {
                         shape="round"
                         size={200}
                         className={"buy-" + book.id}
-                        onClick={() => {
-                          addProducToCart(book);
-                          setCart(productsCart);
-                        }}
+                        onClick={() =>
+                          // addProducToCart(book);
+                          // setCart([
+                          //   {
+                          //     id: book.id,
+                          //     qtd: 1,
+                          //     title: book.title,
+                          //     image: book.image,
+                          //     price: book.price,
+                          //   },
+                          // ])
+                          addItem(book)
+                        }
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {

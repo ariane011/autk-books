@@ -25,24 +25,42 @@ export const CartShopping = () => {
   }, [bookName]);
 
   const setCart = function (productsCart) {
-    localStorage.setItem("cart", JSON.stringify(productsCart));
+    localStorage.setItem("cart", JSON.stringify(book));
+    // console.log(productsCart.find((product) => product.qtd));
   };
-
+  const itemQtd = book.qtd;
+  const setQtd = function (productsCart) {
+    localStorage.setItem("cart", itemQtd);
+    // console.log(productsCart.find((product) => product.qtd));
+  };
   const storageValue = JSON.parse(localStorage.getItem("cart"));
+  console.log(storageValue);
+
+  // const convert = Object.keys(storageValue);
+  console.log(storageValue);
+
+  function saveEditedNote(qtd) {
+    let notesEdit = JSON.parse(localStorage.getItem("cart")).filter(
+      (item) => item.noteQtd !== qtd
+    );
+    console.log(notesEdit);
+    // notesEdit.push({
+    //   qtd: 1,
+    // });
+    localStorage.setItem("cart", JSON.stringify(notesEdit));
+  }
   return (
     <Container>
-      {/* {productsCart.find((item) => item.id === book.id)?.qtd
-        ? productsCart.find((item) => item.id === book.id)?.qtd
-        : "Seu carrinho está vazio"} */}
-      {storageValue.map((index) => (
+      {storageValue?.map((index) => (
         <div key={index.id}>
-          <p>{(index.qtd = countQtd)}</p>
+          <p>{index.qtd}</p>
           <p>{index.title}</p>
           <img src={index.image} alt="Capa do livro" />
           <button
             onClick={() => {
               setCountQtd(countQtd + 1);
-              setCart(productsCart);
+              // localStorage.setItem("cart", JSON.stringify(qtd));
+              // saveEditedNote();
             }}
           >
             +
