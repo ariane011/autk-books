@@ -9,20 +9,23 @@ import api from "../../service";
 export const BookList = () => {
   const [book, setBook] = useState([]);
   const bookName = useLocation();
+
   const fetchData = () => {
-    useEffect(() => {
-      try {
-        BooksList(bookName.pathname).then((response) => {
-          const books = response.data;
-          setBook(books);
-        });
-      } catch (error) {
-        message.error(
-          "Houve um erro ao carregar as informações, tente novamente mais tarde"
-        );
-      }
-    }, [bookName]);
+    BooksList(bookName.pathname).then((response) => {
+      const books = response.data;
+      setBook(books);
+    });
   };
+
+  useEffect(() => {
+    try {
+      fetchData();
+    } catch (error) {
+      message.error(
+        "Houve um erro ao carregar as informações, tente novamente mais tarde"
+      );
+    }
+  }, [bookName]);
 
   function addItem(book) {
     api.post("/cart", book).then((response) => {

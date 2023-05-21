@@ -24,7 +24,7 @@ export const CartShopping = () => {
 
   return (
     <Container>
-      {storageValue?.map((index) => (
+      {book?.map((index) => (
         <div key={index.id}>
           <p>{index.qtd}</p>
           <p>{index.title}</p>
