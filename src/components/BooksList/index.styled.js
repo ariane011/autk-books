@@ -47,17 +47,12 @@ export const Container = styled.div`
     height: auto;
   }
   .p-description {
-    /* display: flex; */
     width: 200px;
     height: auto;
   }
   .list {
     margin-top: 10px;
     width: 90%;
-  }
-  .btn-layout {
-    background-color: transparent;
-    border: none;
   }
   .btn-price {
     margin-top: 12px;
@@ -69,14 +64,5 @@ export const Container = styled.div`
   }
   strong {
     font-weight: 500;
-  }
-  .ant-select-selector,
-  .ant-pagination-options {
-    display: none;
-  }
-  .grid1:hover,
-  .grid2:hover {
-    filter: invert(39%) sepia(65%) saturate(914%) hue-rotate(202deg)
-      brightness(93%) contrast(104%);
   }
 `;
