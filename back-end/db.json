@@ -72,5 +72,28 @@
       "image": "https://m.media-amazon.com/images/I/51SRGgaei2L._SX346_BO1,204,203,200_.jpg",
       "rank": "Nº 6,747"
     }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "qtd": 5,
+      "title": "Pequeno Príncipe",
+      "image": "https://m.media-amazon.com/images/I/51ZGrf91M9L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "price": 17.85
+    },
+    {
+      "id": 2,
+      "qtd": 2,
+      "title": "Um Gato de Rua Chamado Bob",
+      "image": "https://m.media-amazon.com/images/I/419ipeKYNeL._SX331_BO1,204,203,200_.jpg",
+      "price": 51.9
+    },
+    {
+      "id": 4,
+      "qtd": 4,
+      "title": "A Guerra dos Tronos : As Crônicas de Gelo e Fogo, volume 1 Capa comum",
+      "image": "https://m.media-amazon.com/images/I/41UKpOWrZVL._SX346_BO1,204,203,200_.jpg",
+      "price": 51.9
+    }
   ]
 }

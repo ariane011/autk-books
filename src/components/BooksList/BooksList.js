@@ -1,16 +1,16 @@
 import { message, List, Button } from "antd";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BooksList from "../../service/BooksList";
 import { Container, StyledTitle } from "./index.styled";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import api from "../../service";
+import AddBookCart from "../../service/AddBookCart";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
   const bookName = useLocation();
 
-  const fetchData = () => {
+  const getBooks = () => {
     BooksList(bookName.pathname).then((response) => {
       const books = response.data;
       setBook(books);
@@ -19,7 +19,7 @@ export const BookList = () => {
 
   useEffect(() => {
     try {
-      fetchData();
+      getBooks();
     } catch (error) {
       message.error(
         "Houve um erro ao carregar as informações, tente novamente mais tarde"
@@ -27,10 +27,9 @@ export const BookList = () => {
     }
   }, [bookName]);
 
-  function addItem(book) {
-    api.post("/cart", book).then((response) => {
-      console.log(response);
-      fetchData();
+  function addItem(bookData) {
+    AddBookCart(bookData).then((response) => {
+      getBooks();
     });
   }
 
@@ -70,7 +69,15 @@ export const BookList = () => {
                         shape="round"
                         size={200}
                         className={"buy-" + book.id}
-                        onClick={() => addItem(book)}
+                        onClick={() =>
+                          addItem({
+                            id: book.id,
+                            qtd: 1,
+                            title: book.title,
+                            image: book.image,
+                            price: book.price,
+                          })
+                        }
                       >
                         Compre por{" "}
                         {new Intl.NumberFormat("pt-BR", {
