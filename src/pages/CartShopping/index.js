@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, StyledIcon } from "./index.styled";
+import { Container, StyledIcon, StyledTableFooter } from "./index.styled";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-import { Popconfirm, Table, Tooltip, message } from "antd";
+import { Button, Popconfirm, Table, Tooltip, message } from "antd";
 import BooksListCart from "../../service/BookListCart";
 import DeleteBookCart from "../../service/DeleteBookCart";
-import api from "../../service";
 import more from "./../../assets/icons/add.png";
 import less from "./../../assets/icons/less.png";
 import trash from "./../../assets/icons/delete.png";
@@ -13,7 +12,6 @@ import { StyledTitle } from "../../components/BooksList/index.styled";
 
 export const CartShopping = () => {
   const [cart, setCart] = useState([]);
-  const [countQtd, setCountQtd] = useState(1);
   const bookName = useLocation();
 
   const getBooksCart = () => {
@@ -34,32 +32,73 @@ export const CartShopping = () => {
   }, [bookName]);
 
   const removeItem = (item) => {
-    console.log("disparou remove item");
     DeleteBookCart(item).then((response) => {
-      console.log(response);
       getBooksCart();
     });
   };
 
   const updateItem = (item, action) => {
-    let newQuantity = item.qtd;
+    let newQtd = item.qtd;
     if (action === "decrease") {
-      if (newQuantity === 1) {
+      if (newQtd === 1) {
         return;
       }
-      newQuantity -= 1;
+      newQtd -= 1;
     }
     if (action === "increase") {
-      newQuantity += 1;
+      newQtd += 1;
     }
     const newData = {
       ...item,
-      qtd: newQuantity,
+      qtd: newQtd,
     };
     UpdateBookCart(item.id, newData).then((response) => {
       getBooksCart();
     });
   };
+
+  const subTotalCart = () => {
+    let sum = 0;
+    for (let item of cart) {
+      sum += item.price * item.qtd;
+    }
+    return sum;
+  };
+
+  const subTotal = subTotalCart();
+
+  const discountCard = (calcDiscount) => {
+    let percentageTwoBooks = 0.05;
+    let percentageThreeBooks = 0.1;
+    let percentageFourBooks = 0.2;
+    let percentageFiveBooks = 0.25;
+    for (let item of cart) {
+      let itemQtd = item.qtd;
+      if (itemQtd === 1 && cart.length === 2) {
+        var calcPercentage = subTotal * percentageTwoBooks;
+        calcDiscount = calcPercentage;
+      }
+      if (itemQtd === 1 && cart.length === 3) {
+        let calcPercentage = subTotal * percentageThreeBooks;
+        calcDiscount = calcPercentage;
+      }
+      if (itemQtd === 1 && cart.length === 4) {
+        let calcPercentage = subTotal * percentageFourBooks;
+        calcDiscount = calcPercentage;
+      }
+      if (itemQtd === 1 && cart.length >= 5) {
+        let calcPercentage = subTotal * percentageFiveBooks;
+        calcDiscount = calcPercentage;
+      }
+      if (itemQtd > 1) {
+        calcPercentage = 0;
+      }
+    }
+    return calcDiscount;
+  };
+
+  const discount = discountCard();
+  const totalDiscount = subTotal - discount;
 
   const defaultColumns = [
     {
@@ -97,7 +136,7 @@ export const CartShopping = () => {
             onClick={() => updateItem(index, "decrease")}
           >
             <StyledIcon>
-              <img src={less} alt="Less" />
+              <img src={less} alt="Menos" />
             </StyledIcon>
           </button>
           <p>{index.qtd}</p>
@@ -106,7 +145,7 @@ export const CartShopping = () => {
             onClick={() => updateItem(index, "increase")}
           >
             <StyledIcon>
-              <img src={more} alt="More" />
+              <img src={more} alt="Mais" />
             </StyledIcon>
           </button>
         </div>
@@ -167,6 +206,69 @@ export const CartShopping = () => {
         dataSource={cart}
         columns={columns}
         className="table"
+        scroll={{
+          y: 300,
+        }}
+        footer={() => (
+          <StyledTableFooter>
+            <div>
+              <p>
+                {discount ? (
+                  <>
+                    Subtotal:{" "}
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(subTotal)}
+                  </>
+                ) : (
+                  ""
+                )}
+              </p>
+            </div>
+            <div>
+              <p style={{ color: "green", fontStyle: "italic" }}>
+                {discount ? (
+                  <>
+                    Desconto aplicado:{" "}
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(discount)}
+                  </>
+                ) : (
+                  ""
+                )}
+              </p>
+            </div>
+            <div>
+              <p>
+                {discount ? (
+                  <>
+                    Total com desconto:{" "}
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(totalDiscount)}
+                  </>
+                ) : (
+                  <>
+                    Total:{" "}
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(subTotal)}
+                  </>
+                )}
+              </p>
+            </div>
+            <div>
+              <Button type="primary" size={320} className="btn-finish">
+                Finalizar Compra
+              </Button>
+            </div>
+          </StyledTableFooter>
+        )}
       />
     </Container>
   );

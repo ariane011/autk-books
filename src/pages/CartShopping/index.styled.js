@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   .ant-table-pagination {
     display: none;
   }
@@ -20,6 +20,26 @@ export const Container = styled.div`
   .btn-qtd {
     border: none;
     background-color: transparent;
+  }
+`;
+
+export const StyledTableFooter = styled.div`
+  display: grid;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 50px;
+  .btn-finish {
+    background-color: #ff793f;
+    height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    &:hover {
+      background-color: #fd9644;
+    }
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
   }
 `;
 
