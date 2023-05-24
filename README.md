@@ -13,12 +13,19 @@ A regra de descontos é a seguinte:
 
 ---
 
+****
+
+### Demo:
+
+![demo](./src/assets/gifs/demo.gif)
+
 ### 💻 Tecnologias Utilizadas:
 
 - [x] React
 - [x] React router
 - [x] Webpack
 - [x] Antd
+- [x] Styled Components
 - [x] Axios
 - [x] YARN
 - [x] JSON Server
@@ -27,7 +34,7 @@ A regra de descontos é a seguinte:
 
 ---
 
-### 🏚️ Rodar o projeto localmente
+### 🏚️ Rodar o projeto _front-end e back-end_ localmente
 
 #### ⚠️ Pré-requisitos:
 
@@ -39,25 +46,37 @@ Node.js e YARN/NPM instalado
 git clone git@gitlab.com:ariane011/autk-books.git
 ```
 
-#### Passo 2: Acesse a pasta do projeto
+#### Passo 2: Acesse a pasta do back-end
 
 ```sh
-cd autk-books
+cd autk-books/back-end
 ```
 
 #### Passo 3: Instale todas as dependências do projeto
 
 ```sh
+npm install
+```
+
+#### Passo 4: Rode o projeto back-end na sua máquina
+
+```sh
+npm start
+```
+
+#### Passo 5: Agora, acesse o projeto principal e instale todas as dependências
+
+```sh
 yarn install
 ```
 
-#### Passo 4: Rode o projeto na sua máquina
+#### Passo 6: Rode o projeto 
 
 ```sh
 yarn start
 ```
 
-#### Passo 5: Abra o navegador e visualize o projeto
+#### Passo 7: Abra o navegador e visualize o projeto
 
 ```sh
 http://localhost:3000
