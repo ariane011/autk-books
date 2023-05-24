@@ -13,11 +13,13 @@ A regra de descontos é a seguinte:
 
 ---
 
-****
+
 
 ### Demo:
 
 ![demo](./src/assets/gifs/demo.gif)
+
+****
 
 ### 💻 Tecnologias Utilizadas:
 
