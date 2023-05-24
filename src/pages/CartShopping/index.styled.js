@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  padding-bottom: 50px;
+  .ant-table-pagination {
+    display: none;
+  }
+  .table {
+    margin: 40px;
+  }
   .colunm-qtd {
     display: flex;
     justify-content: center;

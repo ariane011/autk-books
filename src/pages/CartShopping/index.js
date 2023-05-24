@@ -8,6 +8,8 @@ import api from "../../service";
 import more from "./../../assets/icons/add.png";
 import less from "./../../assets/icons/less.png";
 import trash from "./../../assets/icons/delete.png";
+import UpdateBookCart from "../../service/UpdateBookCart";
+import { StyledTitle } from "../../components/BooksList/index.styled";
 
 export const CartShopping = () => {
   const [cart, setCart] = useState([]);
@@ -54,10 +56,7 @@ export const CartShopping = () => {
       ...item,
       qtd: newQuantity,
     };
-    console.log(item.qtd);
-    console.log("New data", { newData });
-    api.put(`/cart/${item.id}`, newData).then((response) => {
-      console.log("Response", { response });
+    UpdateBookCart(item.id, newData).then((response) => {
       getBooksCart();
     });
   };
@@ -90,6 +89,7 @@ export const CartShopping = () => {
       editable: false,
     },
     {
+      title: "Quantidade",
       render: (index) => (
         <div className="colunm-qtd">
           <button
@@ -111,6 +111,18 @@ export const CartShopping = () => {
           </button>
         </div>
       ),
+    },
+    {
+      title: "Total",
+      render: (index) => {
+        let calc = index.price * index.qtd;
+        return new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        }).format(calc);
+      },
+      width: "15%",
+      editable: false,
     },
     {
       render: (index, record) =>
@@ -146,31 +158,16 @@ export const CartShopping = () => {
 
   return (
     <Container>
-      {/* {cart?.map((index) => ( */}
-      <>
-        <Table
-          // components={components}
-          rowClassName={() => "editable-row"}
-          bordered
-          dataSource={cart}
-          columns={columns}
-          className="table"
-        />
-        {/* <div key={index.id}>
-            <p>{index.qtd}</p>
-            <p>{index.title}</p>
-            <p>{index.price}</p>
-            <img
-              className="listBookImage"
-              src={index.image}
-              alt="Capa do livro"
-            />
-            <button onClick={() => updateItem(index.qtd, "decrease")}>-</button>
-            <button onClick={() => updateItem(index.qtd, "increase")}>+</button>
-            <button onClick={() => removeItem(index.id)}>x</button>
-          </div> */}
-      </>
-      {/* ))} */}
+      <StyledTitle>
+        <h2 font> Seus Produtos</h2>
+      </StyledTitle>
+      <Table
+        rowClassName={() => "editable-row"}
+        bordered
+        dataSource={cart}
+        columns={columns}
+        className="table"
+      />
     </Container>
   );
 };

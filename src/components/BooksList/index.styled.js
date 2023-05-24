@@ -1,23 +1,25 @@
 import styled from "styled-components";
 
 export const StyledTitle = styled.div`
-  width: 100%;
-  background-color: #f2f3f8;
   height: 50px;
-  /* display: flex; */
   align-items: center;
   font-family: "Roboto";
   font-style: normal;
-  h1 {
-    font-size: 24px;
-    color: #010311;
-    padding-left: 50px;
-    font-weight: 700;
-    width: 100%;
+  margin: 40px;
+  h2 {
+    font-family: "open-sans", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    width: 40%;
+    border-bottom: 2px solid rgba(108, 105, 105, 0.3);
+    padding-bottom: 0.35em;
+    margin-bottom: 0.6em;
+    color: #6c6a69;
   }
 `;
 
 export const Container = styled.div`
+  padding-bottom: 50px;
   font-family: "Roboto";
   font-style: normal;
   margin-bottom: 5%;
@@ -25,13 +27,6 @@ export const Container = styled.div`
     border-block-end: none;
     padding-left: 50px;
     padding-right: 20px;
-  }
-  h2 {
-    font-size: 20px;
-    text-decoration-line: underline;
-    color: #5062f0;
-    line-height: 23px;
-    font-weight: 400;
   }
   h4 {
     font-weight: 500;

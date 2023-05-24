@@ -5,9 +5,10 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 80px;
-  background-color: #5062f0;
+  background-color: #ff6b6b;
+  justify-content: space-between;
+  margin: auto;
   a {
-    margin: 50px;
     text-decoration: none;
     color: white;
     font-family: "Roboto";

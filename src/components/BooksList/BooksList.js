@@ -36,7 +36,9 @@ export const BookList = () => {
   return (
     <>
       <Container>
-        <StyledTitle>Livros Populares</StyledTitle>
+        <StyledTitle>
+          <h2> Livros Populares</h2>
+        </StyledTitle>
         <List
           className="list"
           pagination={{
