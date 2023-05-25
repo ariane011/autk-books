@@ -19,6 +19,10 @@ A regra de descontos é a seguinte:
 
 ![demo](./src/assets/gifs/demo.gif)
 
+---
+
+#### Links úteis: :globe_with_meridians: [Meu quadro no Trello](https://trello.com/invite/b/y9mWexLR/ATTI3266832246f003699f3d6a9fff2ea4deE2604EFF/case-autkbooks)
+
 ****
 
 ### 💻 Tecnologias Utilizadas:
