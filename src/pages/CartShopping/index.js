@@ -72,27 +72,21 @@ export const CartShopping = () => {
     let percentageThreeBooks = 0.1;
     let percentageFourBooks = 0.2;
     let percentageFiveBooks = 0.25;
-    for (let item of cart) {
-      let itemQtd = item.qtd;
-      if (itemQtd === 1 && cart.length === 2) {
-        var calcPercentage = subTotal * percentageTwoBooks;
-        calcDiscount = calcPercentage;
-      }
-      if (itemQtd === 1 && cart.length === 3) {
-        let calcPercentage = subTotal * percentageThreeBooks;
-        calcDiscount = calcPercentage;
-      }
-      if (itemQtd === 1 && cart.length === 4) {
-        let calcPercentage = subTotal * percentageFourBooks;
-        calcDiscount = calcPercentage;
-      }
-      if (itemQtd === 1 && cart.length >= 5) {
-        let calcPercentage = subTotal * percentageFiveBooks;
-        calcDiscount = calcPercentage;
-      }
-      if (itemQtd > 1) {
-        calcPercentage = 0;
-      }
+    if (cart.length === 2) {
+      let calcPercentage = subTotal * percentageTwoBooks;
+      calcDiscount = calcPercentage;
+    }
+    if (cart.length === 3) {
+      let calcPercentage = subTotal * percentageThreeBooks;
+      calcDiscount = calcPercentage;
+    }
+    if (cart.length === 4) {
+      let calcPercentage = subTotal * percentageFourBooks;
+      calcDiscount = calcPercentage;
+    }
+    if (cart.length >= 5) {
+      let calcPercentage = subTotal * percentageFiveBooks;
+      calcDiscount = calcPercentage;
     }
     return calcDiscount;
   };
