@@ -5,15 +5,28 @@ import BooksList from "../../service/BooksList";
 import { Container, StyledTitle } from "./index.styled";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import AddBookCart from "../../service/AddBookCart";
+import BooksListCart from "../../service/BookListCart";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
+  const [bookCart, setBookCart] = useState([]);
+  const [contem, setContem] = useState(false);
   const bookName = useLocation();
 
   const getBooks = () => {
     BooksList(bookName.pathname).then((response) => {
       const books = response.data;
       setBook(books);
+    });
+  };
+
+  const getBookListCart = (bookData) => {
+    BooksListCart(bookData).then((response) => {
+      const booksCart = response.data;
+      // const abcd = booksCart.find((item) => item.id === bookData.id);
+      const abcd = booksCart.includes(bookData);
+
+      console.log(abcd);
     });
   };
 
@@ -28,9 +41,13 @@ export const BookList = () => {
   }, [bookName]);
 
   function addItem(bookData) {
+    getBookListCart(bookData);
+    console.log("Add item", contem);
     AddBookCart(bookData).then((response) => {
       getBooks();
     });
+
+    return null;
   }
 
   return (

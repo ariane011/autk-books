@@ -198,6 +198,7 @@ export const CartShopping = () => {
         rowClassName={() => "editable-row"}
         bordered
         dataSource={cart}
+        locale={{ emptyText: "Seu carrinho está vazio!" }}
         columns={columns}
         className="table"
         scroll={{
