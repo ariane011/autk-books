@@ -76,24 +76,17 @@
   "cart": [
     {
       "id": 1,
-      "qtd": 1,
+      "qtd": 2,
       "title": "Pequeno Príncipe",
       "image": "https://m.media-amazon.com/images/I/51ZGrf91M9L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
       "price": 17.85
     },
     {
       "id": 2,
-      "qtd": 1,
+      "qtd": 2,
       "title": "Um Gato de Rua Chamado Bob",
       "image": "https://m.media-amazon.com/images/I/419ipeKYNeL._SX331_BO1,204,203,200_.jpg",
       "price": 51.9
-    },
-    {
-      "id": 3,
-      "qtd": 1,
-      "title": "Star Wars: Perseguição ao Jedi Capa comum",
-      "image": "https://m.media-amazon.com/images/I/51fsagITVUL._SX351_BO1,204,203,200_.jpg",
-      "price": 54.9
     }
   ]
 }

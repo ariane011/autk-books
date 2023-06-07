@@ -6,6 +6,7 @@ import { Container, StyledTitle } from "./index.styled";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import AddBookCart from "../../service/AddBookCart";
 import BooksListCart from "../../service/BookListCart";
+import UpdateBookCart from "../../service/UpdateBookCart";
 
 export const BookList = () => {
   const [book, setBook] = useState([]);
@@ -20,19 +21,26 @@ export const BookList = () => {
     });
   };
 
-  const getBookListCart = (bookData) => {
+  const getCart = (bookData) => {
     BooksListCart(bookData).then((response) => {
       const booksCart = response.data;
-      // const abcd = booksCart.find((item) => item.id === bookData.id);
-      const abcd = booksCart.includes(bookData);
-
-      console.log(abcd);
+      setBookCart(booksCart);
     });
+  };
+
+  const getBookListCart = (bookData) => {
+    let find = bookCart.findIndex((item) => item.id === bookData.id);
+    if (find !== -1) {
+      return false;
+    } else {
+      return true;
+    }
   };
 
   useEffect(() => {
     try {
       getBooks();
+      getCart();
     } catch (error) {
       message.error(
         "Houve um erro ao carregar as informações, tente novamente mais tarde"
@@ -40,14 +48,26 @@ export const BookList = () => {
     }
   }, [bookName]);
 
-  function addItem(bookData) {
-    getBookListCart(bookData);
-    console.log("Add item", contem);
-    AddBookCart(bookData).then((response) => {
+  const updateItem = (item) => {
+    let newQtd = item.qtd;
+    newQtd += 1;
+    const newData = {
+      ...item,
+      qtd: newQtd,
+    };
+    UpdateBookCart(item.id, newData).then((response) => {
       getBooks();
     });
+  };
 
-    return null;
+  function addItem(bookData) {
+    if (!getBookListCart(bookData)) {
+      updateItem(bookData);
+    } else {
+      AddBookCart(bookData).then((response) => {
+        getBooks();
+      });
+    }
   }
 
   return (
